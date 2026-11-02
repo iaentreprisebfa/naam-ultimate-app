@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>NAAM ULTIMATE GAME – Le Tournoi des Champions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Le Tournoi des Champions : l’élite du Maracana réunie en une seule compétition. Une initiative de Naabi Prod.">
+<meta property="og:title" content="NAAM ULTIMATE GAME – Le Tournoi des Champions"><meta property="og:image" content="photos/hero.jpg">
+<link rel="icon" href="photos/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap">
+<script>
+/* ============ À MODIFIER ICI : textes et réglages (tout est en haut du fichier) ============ */
+const TXT={
+titre:"Le Tournoi des Champions",
+slogan:"« Seuls les champions sont invités. Seul le meilleur sera sacré. »",
+intro:"L’élite du Maracana réunie en une seule compétition. Une initiative de Naabi Prod pour valoriser la jeunesse par le sport.",
+date:"Lancement officiel le 15 février 2027",
+organisateur:"Naabi Prod, initiateur de NAAM ULTIMATE GAME.",
+vision:"Valoriser la jeunesse dans le sport et promouvoir l’excellence dans le Maracana.",
+concept:"Une compétition sélective réservée aux équipes ayant déjà remporté des tournois de Maracana.",
+valeurs:"Excellence · Discipline · Courage · Stratégie · Esprit d’équipe · Dépassement de soi",
+format:"Rencontres de 40 minutes. Sélection sur invitation, équipes déjà titrées.",
+champion:"1 000 000 FCFA + trophée personnalisé + médailles",
+vice:"500 000 FCFA + trophée + médailles",
+joueur:"Gadgets + distinction individuelle",
+buteur:"Trophée + gadgets",
+partenaires:"Visibilité auprès d’un public estimé entre 1 000 et 2 000 personnes sur site, supports de communication, espaces publicitaires, réseaux sociaux, stand commercial et association à un événement valorisant la jeunesse.",
+billets:"Réservez vos billets en ligne et recevez-les en PDF avec un code à scanner à l’entrée.",
+mention:"Contenus provisoires et modifiables jusqu’à validation officielle.",
+initiative:"Une initiative de Naabi Prod"};
+const CFG={
+eventDate:"2027-02-15T00:00:00",      // date du compte à rebours
+whatsapp:"22653281114",             // WhatsApp du comité
+orange:"+226 77330315",moov:"+226 70590227",   // numéros de paiement
+liveUrl:"",                            // lien « intégrer » (embed) d’un direct YouTube ou Facebook
+tickets:[{k:"Entrée standard",p:1000,d:"Accès à l’événement"},{k:"Entrée VIP",p:2000,d:"Accès VIP à tout l’événement"},{k:"Badge VIP 2 jours",p:5000,d:"Accès VIP aux deux jours"}],
+packs:[{k:"Diamant",c:"d",p:3000000,d:"Partenaire majeur, visibilité prioritaire, activation premium.",a:["Visibilité prioritaire","Supports de communication","Présence sur installations","Stand commercial"]},
+{k:"Or",c:"o",p:1500000,d:"Partenaire privilégié, visibilité renforcée.",a:["Visibilité renforcée","Supports de communication","Réseaux sociaux"]},
+{k:"Argent",c:"a",p:500000,d:"Visibilité et présence sur les supports de communication.",a:["Logo sur supports","Mention réseaux sociaux"]}],
+stands:[{k:"Boissons",p:50000,m:6},{k:"Grillades",p:75000,m:6},{k:"Mixte boissons et grillades",p:100000,m:6},{k:"Entreprise",p:150000,m:9,d:"Position standard"},{k:"Entreprise VIP",p:200000,m:12,d:"Meilleur emplacement"}],
+exposants:[],   // ex: {nom:"Chez Awa",cat:"Grillades"}  (cat = nom exact de la catégorie de stand)
+equipes:[],     // ex: {nom:"AS Exemple",ville:"Ouagadougou",palmares:"Vainqueur du tournoi X 2025",logo:"photos/equipe1.jpg"}
+steps:[["Accueil des équipes et du public","Heure à confirmer"],["Protocole d’ouverture","Heure à confirmer"],["Présentation des équipes","Heure à confirmer"],["Lancement des rencontres","Heure à confirmer"],["Animation et village événementiel","Heure à confirmer"],["Phases finales","Heure à confirmer"],["Remise des trophées et récompenses","Heure à confirmer"],["Clôture officielle","Heure à confirmer"]]};
+/* ============ FIN DES RÉGLAGES ============ */
+</script>
+<style>
+:root{--bg:#0a0a0a;--card:#141414d9;--tx:#f3f1ec;--mu:#a9a59b;--y:#ffd60a;--o:#ff9f0a;--r:#e10600;--g:#00a650;--ln:#2b2b2b;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}*{box-sizing:border-box}
+body{margin:0;color:var(--tx);font:300 17px/1.7 Jost,system-ui,-apple-system,sans-serif;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cg fill='none' stroke='%23ffd60a' stroke-opacity='.075' stroke-width='1.5'%3E%3Cpath d='M0 45L45 0l45 45-45 45z'/%3E%3Cpath d='M22 45l23-23 23 23-23 23z'/%3E%3Cpath d='M0 0l11 11M79 11L90 0M0 90l11-11M79 79l11 11'/%3E%3C/g%3E%3C/svg%3E")}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.03em;text-transform:uppercase;line-height:1.1;margin:0 0 .5em}
+h2{font-size:clamp(32px,6.5vw,52px);color:var(--y)}a{color:inherit}b{font-weight:500}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:8px 16px;background:#0a0a0af0;backdrop-filter:blur(8px);border-bottom:1px solid var(--ln)}
+nav img{height:36px;mix-blend-mode:screen}nav div{display:flex;gap:18px;overflow-x:auto;font-size:12px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}nav a{text-decoration:none;color:var(--mu)}nav a:hover{color:var(--y)}
+section{position:relative;overflow:hidden;padding:72px 18px;max-width:1080px;margin:auto}section>*{position:relative}
+.pl{position:absolute!important;right:-24px;top:30px;width:min(300px,52vw);opacity:.1;fill:none;stroke:var(--y);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}.pl.l{right:auto;left:-24px}
+.hero{min-height:86vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;max-width:none;overflow:hidden;background:linear-gradient(#0a0a0a99,#0a0a0aee),var(--hero) center/cover}
+.hero img{width:min(540px,88%);mix-blend-mode:screen}.hero h1{font-size:clamp(38px,8.5vw,78px);color:var(--y);margin-top:10px}
+.sl{color:var(--mu);font-style:italic;max-width:560px}.hero p{max-width:600px}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;border:1px solid var(--y);font:500 12px Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:none;color:var(--tx);margin:5px;transition:.5s}
+.btn:hover{background:#ffd60a22}.btn.p{background:linear-gradient(90deg,var(--y),var(--o));color:#111;border-color:transparent}
+.cd{display:flex;gap:10px;justify-content:center;margin:18px 0}.cd b{background:#000a;border:1px solid var(--ln);border-radius:10px;padding:6px 12px;font:600 30px 'Cormorant Garamond',serif}.cd small{display:block;font:300 11px Jost;color:var(--mu)}
+.stripe{height:4px;background:linear-gradient(90deg,var(--r) 33%,var(--y) 33% 66%,var(--g) 66%)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:14px 0}
+.c{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:20px;backdrop-filter:blur(3px)}.c h3{color:var(--y);font-size:22px}
+.tag{display:inline-block;font:500 11px Jost;letter-spacing:.1em;background:#ff9f0a1f;color:var(--o);border:1px solid var(--o);border-radius:6px;padding:1px 8px;text-transform:uppercase}
+.pr{font:600 28px 'Cormorant Garamond',serif;color:var(--y);margin:4px 0}.empty{color:var(--mu);font-size:14px}
+ol.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--y)}ol.tl li{padding:8px 0 8px 14px;cursor:pointer;position:relative}ol.tl li:before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--y)}ol.tl li span{display:none;color:var(--mu);font-size:14px}ol.tl li.on span{display:block}
+.pk{text-align:center}.pk.d{border-color:#7fd8ff}.pk.o{border-color:var(--y)}.pk.a{border-color:#bbb}.pk ul{text-align:left;font-size:15px;color:var(--mu);padding-left:18px}
+.tm{width:100%;border-radius:14px;margin-top:14px}iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px}
+.ex{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.ex span{border:1px solid var(--ln);border-radius:20px;padding:1px 10px;font-size:13px}
+.team img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;margin-bottom:8px}
+.ov{position:fixed;inset:0;background:#000d;display:none;align-items:flex-start;justify-content:center;z-index:50;padding:14px;overflow:auto}.ov.on{display:flex}
+.ov form,.ov .box{background:#141414;border:1px solid var(--y);border-radius:16px;padding:20px;width:min(520px,100%);margin:auto}
+input,select,textarea{width:100%;padding:10px;margin:4px 0 10px;border-radius:8px;border:1px solid var(--ln);background:#0a0a0a;color:var(--tx);font:inherit;font-size:16px}label{font-size:12px;color:var(--mu)}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-weight:600;color:#fff;text-decoration:none;z-index:30;box-shadow:0 4px 14px #0008}
+footer{border-top:1px solid var(--ln);padding:28px 18px;text-align:center;color:var(--mu);font-size:14px;background:#0a0a0a}
+.tk{background:#fff;color:#000;border:2px dashed #000;border-radius:12px;padding:16px;margin:12px 0;text-align:center;position:relative;font-family:Jost,sans-serif}.tk img{height:50px;filter:none;background:#000;border-radius:6px;padding:2px}.tk h3{color:#000;margin:6px 0}.tk .q{display:flex;justify-content:center;margin:8px 0}.tk .wm{color:#c00;font-weight:500;font-size:13px}
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1.3s ease,transform 1.3s ease}.rv.in{opacity:1;transform:none}
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}.w i{display:inline-block;font-style:normal;transform:translateY(108%);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.in .w i{transform:none}
+.pk:hover{transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.rv,.w i{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media print{body>*:not(#tkp){display:none!important}body{background:#fff}#tkp{position:static;display:block!important;background:#fff;padding:0}#tkp .no{display:none}#tkp .box{border:0;padding:0;background:#fff}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="p1" viewBox="0 0 100 100"><circle cx="55" cy="14" r="8"/><path d="M52 26l-4 30m2-24L30 44m22-12l20-8M48 56L40 94m8-38l26 14 12-18"/><circle cx="92" cy="46" r="6"/></symbol>
+<symbol id="p2" viewBox="0 0 100 100"><circle cx="60" cy="14" r="8"/><path d="M56 26l-10 28M54 32l-22 6m22-6l18 14M46 54L28 72 14 92M46 54l24 12 4 28"/><circle cx="86" cy="92" r="6"/></symbol>
+<symbol id="p3" viewBox="0 0 100 100"><circle cx="50" cy="16" r="8"/><path d="M50 26v32M50 32L28 10m22 22l22-22M50 58L36 94m14-36l14 36"/></symbol>
+<symbol id="p4" viewBox="0 0 100 100"><circle cx="28" cy="34" r="8"/><path d="M36 38l34 14M40 40L14 20m26 20l-4-26M70 52l24 14M70 52l22 2"/><circle cx="8" cy="10" r="6"/></symbol></defs></svg>
+<nav><img src="photos/logo.jpg" alt="Ultimate Game"><div><a href="#concept">Concept</a><a href="#format">Format</a><a href="#equipes">Équipes</a><a href="#prix">Récompenses</a><a href="#billetterie">Billetterie</a><a href="#partenaires">Partenaires</a><a href="#live">Live</a><a href="#village">Village</a></div></nav>
+<header class="hero in" style="--hero:url(photos/hero.jpg)"><img src="photos/logo.jpg" alt="NAAM Ultimate Game">
+<h1 data-t="titre"></h1><p class="sl" data-t="slogan"></p><p data-t="intro"></p><p><b data-t="date"></b></p><div class="cd" id="cd"></div>
+<div><a class="btn p" href="#billetterie">Réserver mon billet</a><a class="btn" href="#concept">Découvrir la compétition</a><a class="btn" href="#partenaires">Devenir partenaire</a><a class="btn" href="#live">Voir les résultats</a></div></header><div class="stripe"></div>
+
+<section id="concept" class="rv"><svg class="pl"><use href="#p1"/></svg><h2>Comprendre NAAM Ultimate Game</h2>
+<div class="grid"><div class="c"><h3>L’organisateur</h3><span data-t="organisateur"></span></div><div class="c"><h3>La vision</h3><span data-t="vision"></span></div><div class="c"><h3>Le concept</h3><span data-t="concept"></span></div></div>
+<p><b style="color:var(--y)">Valeurs :</b> <span data-t="valeurs"></span></p>
+<div class="grid"><div class="c"><h3>Comité d’organisation</h3><span class="tag">À renseigner</span></div><div class="c"><h3>Documents officiels</h3><span class="tag">À publier</span><p class="empty">Lettres, autorisations et justificatifs seront publiés ici après validation.</p></div></div></section>
+
+<section id="format" class="rv"><svg class="pl l"><use href="#p2"/></svg><h2>Format &amp; déroulement</h2>
+<div class="grid"><div class="c"><h3>Maracana Commando</h3><span data-t="format"></span></div><div class="c"><h3>Calendrier &amp; classement</h3><span class="tag">Provisoire</span><p class="empty">Phases, règles et programme seront publiés par l’organisation.</p></div></div>
+<h3 style="margin-top:28px">Déroulement de la journée</h3><ol class="tl" id="tl"></ol></section>
+
+<section id="equipes" class="rv"><svg class="pl"><use href="#p4"/></svg><h2>Équipes sélectionnées</h2><div class="grid" id="eq"></div></section>
+
+<section id="prix" class="rv"><svg class="pl l"><use href="#p3"/></svg><h2>Récompenses</h2><div class="grid">
+<div class="c"><h3>Champion</h3><span data-t="champion"></span></div><div class="c"><h3>Vice-champion</h3><span data-t="vice"></span></div>
+<div class="c"><h3>Meilleur joueur</h3><span data-t="joueur"></span></div><div class="c"><h3>Meilleur buteur</h3><span data-t="buteur"></span></div></div></section>
+
+<section id="billetterie" class="rv"><svg class="pl"><use href="#p1"/></svg><h2>Billetterie</h2><p data-t="billets"></p><div class="grid" id="bil"></div>
+<p class="empty">Le billet n’est valable qu’après confirmation du paiement par l’organisation. <a href="ticket.html" style="color:var(--y)">Retrouver mon billet</a></p></section>
+
+<section id="partenaires" class="rv"><svg class="pl l"><use href="#p2"/></svg><h2>Devenir partenaire</h2><p data-t="partenaires"></p><div class="grid" id="packs"></div>
+<p class="empty">Une demande n’est ni un paiement ni un partenariat confirmé.</p></section>
+
+<section id="live" class="rv"><svg class="pl"><use href="#p4"/></svg><h2>Live Naam Ultimate Game</h2><div id="lv"></div>
+<div class="grid"><div class="c"><h3>Match en direct</h3><div class="pr">– : –</div><p class="empty">Aucun match en cours. Scores et chronomètre s’afficheront ici.</p></div>
+<div class="c"><h3>Calendrier &amp; résultats</h3><p class="empty">Aucun match programmé pour l’instant.</p></div>
+<div class="c"><h3>Classements</h3><p class="empty">Équipes, buteurs, défenseurs, gardiens : à venir.</p></div></div></section>
+
+<section id="village" class="rv"><svg class="pl l"><use href="#p3"/></svg><h2>Le Village</h2>
+<img class="tm" src="photos/village.jpg" alt="Photocall du village Maracana" loading="lazy"><p class="empty">Visuel d’illustration.</p>
+<h3 style="margin-top:26px">Réserver un stand</h3><div class="grid" id="st"></div>
+<h3 style="margin-top:26px">Exposants par catégorie</h3><div class="grid" id="ex"></div></section>
+
+<footer><b style="color:var(--y)">NAAM ULTIMATE GAME</b> · <span data-t="initiative"></span><br><span data-t="mention"></span></footer>
+<a class="wa" id="wa" href="#" aria-label="WhatsApp">WA</a>
+
+<div class="ov" id="m"><form id="f"><h3 id="mt" style="color:var(--y)"></h3>
+<label>Entreprise / nom</label><input name="e" required><label>Nom et prénom du responsable</label><input name="n" required><label>Fonction</label><input name="fn">
+<label>Téléphone</label><input name="t" type="tel" required><label>E-mail</label><input name="em" type="email" required><label>Ville</label><input name="v">
+<label id="ol"></label><select name="p"></select><div id="cw"><label>Contribution</label><select name="c"><option>Financière</option><option>Matérielle</option><option>Mixte</option></select></div>
+<label>Message</label><textarea name="msg" rows="3"></textarea><button class="btn p" type="submit">Envoyer ma demande</button><button class="btn" type="button" onclick="m.classList.remove('on')">Fermer</button><p id="rf" class="empty"></p></form></div>
+
+<div class="ov" id="tm"><form id="tf"><h3 style="color:var(--y)">Acheter un billet</h3>
+<label>Type de billet</label><select name="ty"></select><label>Quantité</label><input name="q" type="number" min="1" max="10" value="1">
+<label>Nom et prénom</label><input name="n" required><label>Téléphone</label><input name="t" type="tel" required><label>E-mail</label><input name="em" type="email" required>
+<p>Total : <b id="tot" class="pr"></b></p><button class="btn p" type="submit">Commander</button><button class="btn" type="button" onclick="tm.classList.remove('on')">Fermer</button></form></div>
+<div class="ov" id="tkp"><div class="box"><h3 style="color:var(--y)">Commande enregistrée</h3><p id="ord"></p><p id="pay"></p>
+<label>Opérateur utilisé</label><select id="op"><option>Orange Money</option><option>Moov Money</option></select><label>Numéro de transaction (ID reçu par SMS)</label><input id="tx">
+<button class="btn p" id="pb">J’ai payé</button><p id="pm" class="empty"></p>
+<a class="btn" id="wt" target="_blank">Preuve par WhatsApp</a><a class="btn" id="mt2" href="ticket.html">Retrouver mon billet</a><button class="btn" onclick="tkp.classList.remove('on')">Fermer</button></div></div>
+<script>
+const $=s=>document.querySelector(s),m=$('#m'),tm=$('#tm'),tkp=$('#tkp'),F=n=>n.toLocaleString('fr-FR')+' FCFA';
+document.querySelectorAll('[data-t]').forEach(e=>e.textContent=TXT[e.dataset.t]);
+const wl=t=>'https://wa.me/'+CFG.whatsapp+'?text='+encodeURIComponent(t);$('#wa').href=wl('Bonjour, je souhaite contacter le comité NAAM Ultimate Game.');
+const E=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+$('#eq').innerHTML=CFG.equipes.length?CFG.equipes.map(t=>`<div class="c team">${t.logo?`<img src="${E(t.logo)}" alt="${E(t.nom)}" loading="lazy">`:''}<h3>${E(t.nom)}</h3>${E(t.ville||'')}<p class="empty">${E(t.palmares||'')}</p></div>`).join(''):'<div class="c"><span class="tag">À annoncer</span><p class="empty">La liste officielle des équipes invitées sera publiée ici dès validation.</p></div>';
+$('#bil').innerHTML=CFG.tickets.map((t,i)=>`<div class="c pk"><h3>${E(t.k)}</h3><div class="pr">${F(t.p)}</div><p class="empty">${E(t.d)}</p><button class="btn p" data-t="${i}">Acheter</button></div>`).join('');
+$('#packs').innerHTML=CFG.packs.map(p=>`<div class="c pk ${p.c}"><h3>Pack ${p.k}</h3><div class="pr">${F(p.p)}</div><p>${p.d}</p><ul>${p.a.map(x=>'<li>'+x+'</li>').join('')}</ul><button class="btn p" data-p="${p.k}">Souscrire à ce pack</button></div>`).join('');
+$('#st').innerHTML=CFG.stands.map(s=>`<div class="c pk"><h3>${E(s.k)}</h3><div class="pr">${F(s.p)}</div><p class="empty">${s.m} m²${s.d?' · '+E(s.d):''}</p><button class="btn p" data-s="${E(s.k)}">Réserver ce stand</button></div>`).join('');
+$('#ex').innerHTML=CFG.stands.map(s=>{const l=CFG.exposants.filter(x=>x.cat==s.k);return`<div class="c"><h3>${E(s.k)}</h3>${l.length?`<div class="ex">${l.map(x=>'<span>'+E(x.nom)+'</span>').join('')}</div>`:'<p class="empty">Aucun exposant pour l’instant.</p>'}</div>`}).join('');
+$('#lv').innerHTML=CFG.liveUrl?`<iframe src="${E(CFG.liveUrl)}" allowfullscreen loading="lazy" title="Direct"></iframe>`:'<div class="c"><span class="tag">Bientôt</span><p class="empty">Le direct vidéo des matchs sera diffusé ici pendant la compétition.</p></div>';
+function openM(t,lab,opts,sel,pack){$('#mt').textContent=t;$('#ol').textContent=lab;$('select[name=p]').innerHTML=opts.map(o=>`<option>${E(o)}</option>`).join('');$('select[name=p]').value=sel;$('#cw').style.display=pack?'':'none';$('#rf').textContent='';m.dataset.k=lab;m.classList.add('on')}
+document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>openM('Souscrire au pack '+b.dataset.p,'Pack',CFG.packs.map(p=>p.k),b.dataset.p,1));
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>openM('Réserver un stand','Stand',CFG.stands.map(p=>p.k),b.dataset.s,0));
+$('#f').onsubmit=e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target)),r='NUG-'+Date.now().toString(36).toUpperCase();
+$('#rf').innerHTML='Référence : <b>'+r+'</b>. Envoyez la demande au comité via WhatsApp. Elle n’est confirmée qu’après validation de l’organisation.';
+window.open(wl(`Demande ${m.dataset.k} ${d.p} (${r})\nNom: ${d.e}\nResponsable: ${d.n} (${d.fn})\nTél: ${d.t}\nEmail: ${d.em}\nVille: ${d.v}\n`+(d.c?'Contribution: '+d.c+'\n':'')+'Message: '+d.msg),'_blank')};
+/* billetterie */
+const ts=$('select[name=ty]'),tq=$('#tf [name=q]');ts.innerHTML=CFG.tickets.map((t,i)=>`<option value="${i}">${E(t.k)} – ${F(t.p)}</option>`).join('');
+const tot=()=>$('#tot').textContent=F(CFG.tickets[ts.value].p*Math.max(1,Math.min(10,+tq.value||1)));ts.onchange=tq.oninput=tot;
+document.querySelectorAll('[data-t]:is(button)').forEach(b=>b.onclick=()=>{ts.value=b.dataset.t;tot();tm.classList.add('on')});
+let cur={};
+$('#tf').onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target)),bt=e.target.querySelector('[type=submit]');bt.disabled=true;
+try{const r=await fetch('/api/orders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:+d.ty,qty:+d.q,name:d.n,phone:d.t,email:d.em})});if(!r.ok)throw 0;const j=await r.json();
+cur={ref:j.ref,phone:d.t};tm.classList.remove('on');$('#ord').innerHTML='Référence : <b>'+j.ref+'</b> · Total : <b>'+F(j.total)+'</b>';
+$('#pay').innerHTML='Payez <b>'+F(j.total)+'</b> par <b>Orange Money : '+CFG.orange+'</b> ou <b>Moov Money : '+CFG.moov+'</b>, puis saisissez ci-dessous l’ID de transaction reçu par SMS. Conservez la référence.';
+$('#mt2').href='ticket.html?ref='+j.ref;$('#wt').href=wl('Paiement commande '+j.ref+' ('+F(j.total)+')\nNom: '+d.n);$('#pm').textContent='';tkp.classList.add('on')}
+catch(x){alert('Service momentanément indisponible. Contactez-nous sur WhatsApp.')}bt.disabled=false};
+$('#pb').onclick=async()=>{try{const r=await fetch('/api/proof',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ref:cur.ref,phone:cur.phone,operator:$('#op').value,txid:$('#tx').value})});if(!r.ok)throw 0;$('#pm').textContent='Preuve reçue. Votre billet sera disponible après validation : retrouvez-le avec « Retrouver mon billet ».'}catch(x){$('#pm').textContent='Échec : vérifiez l’ID, ou envoyez la preuve par WhatsApp.'}};
+tot();
+$('#tl').innerHTML=CFG.steps.map((s,i)=>`<li><b>${i+1}. ${s[0]}</b><span>${s[1]}</span></li>`).join('');document.querySelectorAll('#tl li').forEach(l=>l.onclick=()=>l.classList.toggle('on'));
+const cd=$('#cd');if(CFG.eventDate){const t=()=>{let s=Math.max(0,(new Date(CFG.eventDate)-Date.now())/1e3|0);cd.innerHTML=[['j',86400],['h',3600],['min',60],['s',1]].map(([n,v])=>{const x=s/v|0;s-=x*v;return`<b>${x}<small>${n}</small></b>`}).join('')};t();setInterval(t,1e3)}else cd.innerHTML='<span class="tag">Date à confirmer</span>';
+document.querySelectorAll('h1,h2').forEach(h=>h.innerHTML=h.textContent.split(' ').map((w,i)=>`<span class="w"><i style="transition-delay:${i*.14}s">${E(w)}</i></span>`).join(' '));
+document.querySelectorAll('.c').forEach((c,i)=>{c.classList.add('rv');c.style.transitionDelay=(i%3)*.12+'s'});
+const io=new IntersectionObserver(a=>a.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+</script></body></html>

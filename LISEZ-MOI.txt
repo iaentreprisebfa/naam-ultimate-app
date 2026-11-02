@@ -1,0 +1,11 @@
+Dossier prêt pour Vercel.
+- index.html : site public (réglages et textes en haut)
+- ticket.html : le client retrouve et imprime son billet
+- admin.html : validation des paiements (clé ADMIN_KEY)
+- scan.html : scan des billets à l entrée (clé SCAN_KEY)
+- api/ : serveur (fonctions Vercel)
+- supabase.sql : base de données
+- photos/ : vos images
+Variables Vercel : SUPABASE_URL, SUPABASE_SERVICE_KEY, TOKEN_SECRET, ADMIN_KEY, SCAN_KEY
+Variable Vercel supplémentaire pour le direct : LIVE_URL (lien « intégrer » YouTube/Facebook).
+SQL : exécutez supabase.sql puis supabase-app.sql.
