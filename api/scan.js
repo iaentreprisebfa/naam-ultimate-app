@@ -7,6 +7,11 @@ module.exports=L.wrap(async(req,res)=>{
  const [t]=await L.sb('tickets?select=*&code=eq.'+L.enc(code));
  if(!t)return no('BILLET INTROUVABLE');
  if(t.status!=='valid')return no('NON VALIDE (paiement non confirmé ou annulé)');
+ const def=L.TICKETS.find(x=>x.k===t.type),today=new Date().toISOString().slice(0,10);
+ if(def&&today>=L.FESTIVAL_START){
+  if(!def.days.includes(today))return no('PAS VALABLE AUJOURD’HUI (valable le '+def.days.map(d=>d.slice(8)+'/01').join(' et le ')+')');
+  if(t.last_scan&&String(t.last_scan).slice(0,10)===today)return no('DÉJÀ UTILISÉ AUJOURD’HUI');
+ }
  if(t.scans>=t.max_scans)return no('DÉJÀ UTILISÉ ('+t.scans+'/'+t.max_scans+')');
  const u=await L.sb('tickets?code=eq.'+L.enc(code)+'&scans=eq.'+t.scans,{method:'PATCH',body:JSON.stringify({scans:t.scans+1,last_scan:new Date().toISOString()})});
  if(!u.length)return no('DÉJÀ SCANNÉ À L’INSTANT');

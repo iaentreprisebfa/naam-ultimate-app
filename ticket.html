@@ -9,7 +9,7 @@ $('#go').onclick=async()=>{const o=$('#o');o.innerHTML='…';
 try{const r=await fetch('/api/ticket?ref='+encodeURIComponent($('#r').value.trim())+'&phone='+encodeURIComponent($('#p').value));if(!r.ok){o.innerHTML='<p>Commande introuvable. Vérifiez la référence et le téléphone.</p>';return}
 const j=await r.json();
 if(j.status!=='paid'){o.innerHTML='<div class="c">Commande '+E(j.ref)+' : '+({pending:'en attente de paiement',proof:'preuve reçue, validation en cours',rejected:'refusée, contactez-nous sur WhatsApp'}[j.status]||E(j.status))+'</div>';return}
-await lq();o.innerHTML='';j.tickets.forEach(t=>{const d=document.createElement('div');d.className='tk';d.innerHTML='<b style="font-size:20px">NAAM ULTIMATE GAME</b><br>'+E(t.type)+' – '+E(t.name)+'<div class="q"></div><b>'+E(t.code)+'</b><br>Lancement officiel le 15 février 2027'+(t.max_scans>1?'<br>Valable '+t.max_scans+' jours':'');o.appendChild(d);if(window.QRCode)new QRCode(d.querySelector('.q'),{text:t.token,width:170,height:170})});
+await lq();o.innerHTML='';j.tickets.forEach(t=>{const d=document.createElement('div');d.className='tk';d.innerHTML='<b style="font-size:20px">NAAM ULTIMATE GAME</b><br>'+E(t.type)+' – '+E(t.name)+'<div class="q"></div><b>'+E(t.code)+'</b><br>Festival NAAM · Terrain Nord Mairie Arrondissement 5 (ex Bogodogo), près du SIAO'+(t.max_scans>1?'<br>Valable les 23 et 24 janvier 2027':'');o.appendChild(d);if(window.QRCode)new QRCode(d.querySelector('.q'),{text:t.token,width:170,height:170})});
 const b=document.createElement('button');b.className='no';b.textContent='Télécharger / imprimer en PDF';b.onclick=()=>print();o.appendChild(b)}catch(e){o.innerHTML='<p>Service indisponible.</p>'}};
 if($('#r').value)$('#p').focus();
 </script></body></html>

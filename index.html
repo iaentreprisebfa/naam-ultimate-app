@@ -11,33 +11,48 @@ const TXT={
 titre:"Le Tournoi des Champions",
 slogan:"« Seuls les champions sont invités. Seul le meilleur sera sacré. »",
 intro:"L’élite du Maracana réunie en une seule compétition. Une initiative de Naabi Prod pour valoriser la jeunesse par le sport.",
-date:"Lancement officiel le 15 février 2027",
+date:"Du 21 au 24 janvier 2027 · Ouagadougou",
+lieuTournoi:"Tournoi Maracana : Soccer de Charles Kaboré, samedi 23 et dimanche 24 janvier 2027.",
+lieuFestival:"Festival : terrain côté Nord de la Mairie de l’Arrondissement 5 (ex Bogodogo), non loin du SIAO, du jeudi 21 au dimanche 24 janvier 2027.",
+acces:"Entrée gratuite au festival les jeudi 21 et vendredi 22 janvier. Entrée payante les samedi 23 et dimanche 24 janvier.",
+artistes:"Francky Degam · Campus Ambiance · Mas-B · Élue 111 · Audrey · Reman · Tanya · Faiti baby · Floby · Skanayy",
+artistesNote:"Dix artistes annoncés pour les soirées du festival. Répartition et horaires de passage à venir.",
 organisateur:"Naabi Prod, initiateur de NAAM ULTIMATE GAME.",
 vision:"Valoriser la jeunesse dans le sport et promouvoir l’excellence dans le Maracana.",
 concept:"Une compétition sélective réservée aux équipes ayant déjà remporté des tournois de Maracana.",
 valeurs:"Excellence · Discipline · Courage · Stratégie · Esprit d’équipe · Dépassement de soi",
-format:"Rencontres de 40 minutes. Sélection sur invitation, équipes déjà titrées.",
+format:"16 équipes déjà titrées, sélectionnées sur invitation. Durée des rencontres (40 minutes) et règlement final à confirmer.",
 champion:"1 000 000 FCFA + trophée personnalisé + médailles",
 vice:"500 000 FCFA + trophée + médailles",
-joueur:"Gadgets + distinction individuelle",
-buteur:"Trophée + gadgets",
-partenaires:"Visibilité auprès d’un public estimé entre 1 000 et 2 000 personnes sur site, supports de communication, espaces publicitaires, réseaux sociaux, stand commercial et association à un événement valorisant la jeunesse.",
-billets:"Réservez vos billets en ligne et recevez-les en PDF avec un code à scanner à l’entrée.",
+joueur:"Gadgets / lots partenaires",
+buteur:"Trophée + gadgets / lots partenaires",
+partenaires:"Un festival de 4 jours et un tournoi de 2 jours, avec un objectif de 3 000 à 5 000 festivaliers cumulés (hypothèse de planification, non garantie). Visibilité physique et numérique, stand, billets offerts et rapport de visibilité selon le pack.",
+billets:"Billetterie du festival uniquement. Entrée gratuite les jeudi 21 et vendredi 22 janvier. Pour les samedi 23 et dimanche 24, réservez en ligne et recevez votre billet en PDF avec un code à scanner à l’entrée.",
 mention:"Contenus provisoires et modifiables jusqu’à validation officielle.",
 initiative:"Une initiative de Naabi Prod"};
 const CFG={
-eventDate:"2027-02-15T00:00:00",      // date du compte à rebours
+eventDate:"2027-01-21T00:00:00",      // date du compte à rebours (ouverture du festival)
 whatsapp:"22653281114",             // WhatsApp du comité
 orange:"+226 77330315",moov:"+226 70590227",   // numéros de paiement
 liveUrl:"",                            // lien « intégrer » (embed) d’un direct YouTube ou Facebook
-tickets:[{k:"Entrée standard",p:1000,d:"Accès à l’événement"},{k:"Entrée VIP",p:2000,d:"Accès VIP à tout l’événement"},{k:"Badge VIP 2 jours",p:5000,d:"Accès VIP aux deux jours"}],
-packs:[{k:"Diamant",c:"d",p:3000000,d:"Partenaire majeur, visibilité prioritaire, activation premium.",a:["Visibilité prioritaire","Supports de communication","Présence sur installations","Stand commercial"]},
-{k:"Or",c:"o",p:1500000,d:"Partenaire privilégié, visibilité renforcée.",a:["Visibilité renforcée","Supports de communication","Réseaux sociaux"]},
-{k:"Argent",c:"a",p:500000,d:"Visibilité et présence sur les supports de communication.",a:["Logo sur supports","Mention réseaux sociaux"]}],
-stands:[{k:"Boissons",p:50000,m:6},{k:"Grillades",p:75000,m:6},{k:"Mixte boissons et grillades",p:100000,m:6},{k:"Entreprise",p:150000,m:9,d:"Position standard"},{k:"Entreprise VIP",p:200000,m:12,d:"Meilleur emplacement"}],
+// Billets : même ordre et mêmes prix que dans api/_lib.js
+tickets:[{k:"Standard · Samedi 23 janvier",p:500,d:"Accès au festival le jour 3 uniquement"},{k:"Standard · Dimanche 24 janvier",p:1000,d:"Accès au festival le jour 4 uniquement"},{k:"Pass VIP · 23 et 24 janvier",p:3000,d:"Accès VIP au festival les jours 3 et 4 (un passage par jour)"}],
+packs:[{k:"Diamant",c:"d",p:8000000,d:"Partenaire majeur.",a:["Visibilité prioritaire sur les supports principaux","Stand partenaire premium","Présence dans les contenus phares","Prise de parole ou activation selon conducteur","100 billets festival offerts (10 VIP + 90 standard)","Rapport détaillé"]},
+{k:"Or",c:"o",p:4000000,d:"Partenaire privilégié.",a:["Visibilité renforcée","Stand partenaire","Présence sur une sélection de contenus","Mentions digitales et invitations","70 billets festival offerts (7 VIP + 63 standard)","Rapport de visibilité"]},
+{k:"Argent",c:"a",p:1500000,d:"Partenaire associé.",a:["Logo sur supports collectifs","Mentions groupées","Visibilité digitale planifiée","Présence sur site selon disponibilité","50 billets festival offerts (5 VIP + 45 standard)"]}],
+// Stands du festival (15 au total). p:0 = inclus dans les packs, non réservable en ligne
+stands:[{k:"Stand grillades",p:50000,n:7},{k:"Stand maquis",p:75000,n:3},{k:"Stand partenaire",p:0,n:5,d:"Inclus dans les packs Diamant et Or"}],
 exposants:[],   // ex: {nom:"Chez Awa",cat:"Grillades"}  (cat = nom exact de la catégorie de stand)
 equipes:[],     // ex: {nom:"AS Exemple",ville:"Ouagadougou",palmares:"Vainqueur du tournoi X 2025",logo:"photos/equipe1.jpg"}
-steps:[["Accueil des équipes et du public","Heure à confirmer"],["Protocole d’ouverture","Heure à confirmer"],["Présentation des équipes","Heure à confirmer"],["Lancement des rencontres","Heure à confirmer"],["Animation et village événementiel","Heure à confirmer"],["Phases finales","Heure à confirmer"],["Remise des trophées et récompenses","Heure à confirmer"],["Clôture officielle","Heure à confirmer"]]};
+// Programme : [titre, détail]
+steps:[["Jeudi 21 janvier · Festival","Ouverture du village, accueil des exposants, lancement des animations. Entrée gratuite."],
+["Vendredi 22 janvier · Festival","Animations sportives, rencontres avec les équipes, jeux et challenges. Entrée gratuite."],
+["Samedi 23 janvier · 8 h – 17 h · Soccer","Rencontres des 16 équipes au Soccer de Charles Kaboré."],
+["Samedi 23 janvier · 17 h – 19 h · Soccer","Quarts de finale."],
+["Samedi 23 janvier · 20 h – 22 h · Soccer","Demi-finales. Matchs diffusés sur écrans géants au festival (entrée 500 F, VIP 3 000 F)."],
+["Dimanche 24 janvier · 16 h · Soccer","Match de gala."],
+["Dimanche 24 janvier · 19 h · Soccer","Finale."],
+["Dimanche 24 janvier · 20 h · Festival","Remise des trophées, médailles et distinctions au festival, puis clôture (entrée 1 000 F, VIP 3 000 F)."]]};
 /* ============ FIN DES RÉGLAGES ============ */
 </script>
 <style>
@@ -83,7 +98,7 @@ footer{border-top:1px solid var(--ln);padding:28px 18px;text-align:center;color:
 <symbol id="p2" viewBox="0 0 100 100"><circle cx="60" cy="14" r="8"/><path d="M56 26l-10 28M54 32l-22 6m22-6l18 14M46 54L28 72 14 92M46 54l24 12 4 28"/><circle cx="86" cy="92" r="6"/></symbol>
 <symbol id="p3" viewBox="0 0 100 100"><circle cx="50" cy="16" r="8"/><path d="M50 26v32M50 32L28 10m22 22l22-22M50 58L36 94m14-36l14 36"/></symbol>
 <symbol id="p4" viewBox="0 0 100 100"><circle cx="28" cy="34" r="8"/><path d="M36 38l34 14M40 40L14 20m26 20l-4-26M70 52l24 14M70 52l22 2"/><circle cx="8" cy="10" r="6"/></symbol></defs></svg>
-<nav><img src="photos/logo.jpg" alt="Ultimate Game"><div><a href="#concept">Concept</a><a href="#format">Format</a><a href="#equipes">Équipes</a><a href="#prix">Récompenses</a><a href="#billetterie">Billetterie</a><a href="#partenaires">Partenaires</a><a href="#live">Live</a><a href="#village">Village</a></div></nav>
+<nav><img src="photos/logo.jpg" alt="Ultimate Game"><div><a href="#concept">Concept</a><a href="#format">Programme</a><a href="#equipes">Équipes</a><a href="#prix">Récompenses</a><a href="#billetterie">Billetterie</a><a href="#partenaires">Partenaires</a><a href="#live">Live</a><a href="#village">Village</a></div></nav>
 <header class="hero in" style="--hero:url(photos/hero.jpg)"><img src="photos/logo.jpg" alt="NAAM Ultimate Game">
 <h1 data-t="titre"></h1><p class="sl" data-t="slogan"></p><p data-t="intro"></p><p><b data-t="date"></b></p><div class="cd" id="cd"></div>
 <div><a class="btn p" href="#billetterie">Réserver mon billet</a><a class="btn" href="#concept">Découvrir la compétition</a><a class="btn" href="#partenaires">Devenir partenaire</a><a class="btn" href="#live">Voir les résultats</a></div></header><div class="stripe"></div>
@@ -93,9 +108,10 @@ footer{border-top:1px solid var(--ln);padding:28px 18px;text-align:center;color:
 <p><b style="color:var(--y)">Valeurs :</b> <span data-t="valeurs"></span></p>
 <div class="grid"><div class="c"><h3>Comité d’organisation</h3><span class="tag">À renseigner</span></div><div class="c"><h3>Documents officiels</h3><span class="tag">À publier</span><p class="empty">Lettres, autorisations et justificatifs seront publiés ici après validation.</p></div></div></section>
 
-<section id="format" class="rv"><svg class="pl l"><use href="#p2"/></svg><h2>Format &amp; déroulement</h2>
-<div class="grid"><div class="c"><h3>Maracana Commando</h3><span data-t="format"></span></div><div class="c"><h3>Calendrier &amp; classement</h3><span class="tag">Provisoire</span><p class="empty">Phases, règles et programme seront publiés par l’organisation.</p></div></div>
-<h3 style="margin-top:28px">Déroulement de la journée</h3><ol class="tl" id="tl"></ol></section>
+<section id="format" class="rv"><svg class="pl l"><use href="#p2"/></svg><h2>Deux sites, un événement</h2>
+<div class="grid"><div class="c"><h3>Le Maracana</h3><span data-t="lieuTournoi"></span><p class="empty" data-t="format"></p></div><div class="c"><h3>Le Festival</h3><span data-t="lieuFestival"></span><p class="empty" data-t="acces"></p></div></div>
+<h3 style="margin-top:28px">Programme</h3><ol class="tl" id="tl"></ol><p class="empty">Ordre des matchs et tableau officiel fixés par le comité sportif. Touchez une ligne pour voir le détail.</p>
+<div class="c" style="margin-top:20px"><h3>Artistes du festival</h3><span data-t="artistes"></span><p class="empty" data-t="artistesNote"></p></div></section>
 
 <section id="equipes" class="rv"><svg class="pl"><use href="#p4"/></svg><h2>Équipes sélectionnées</h2><div class="grid" id="eq"></div></section>
 
@@ -116,7 +132,7 @@ footer{border-top:1px solid var(--ln);padding:28px 18px;text-align:center;color:
 
 <section id="village" class="rv"><svg class="pl l"><use href="#p3"/></svg><h2>Le Village</h2>
 <img class="tm" src="photos/village.jpg" alt="Photocall du village Maracana" loading="lazy"><p class="empty">Visuel d’illustration.</p>
-<h3 style="margin-top:26px">Réserver un stand</h3><div class="grid" id="st"></div>
+<p data-t="lieuFestival"></p><h3 style="margin-top:26px">Réserver un stand</h3><p class="empty">Tarifs à confirmer selon dimensions, électricité et emplacement.</p><div class="grid" id="st"></div>
 <h3 style="margin-top:26px">Exposants par catégorie</h3><div class="grid" id="ex"></div></section>
 
 <footer><b style="color:var(--y)">NAAM ULTIMATE GAME</b> · <span data-t="initiative"></span><br><span data-t="mention"></span></footer>
@@ -144,12 +160,12 @@ const E=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"
 $('#eq').innerHTML=CFG.equipes.length?CFG.equipes.map(t=>`<div class="c team">${t.logo?`<img src="${E(t.logo)}" alt="${E(t.nom)}" loading="lazy">`:''}<h3>${E(t.nom)}</h3>${E(t.ville||'')}<p class="empty">${E(t.palmares||'')}</p></div>`).join(''):'<div class="c"><span class="tag">À annoncer</span><p class="empty">La liste officielle des équipes invitées sera publiée ici dès validation.</p></div>';
 $('#bil').innerHTML=CFG.tickets.map((t,i)=>`<div class="c pk"><h3>${E(t.k)}</h3><div class="pr">${F(t.p)}</div><p class="empty">${E(t.d)}</p><button class="btn p" data-t="${i}">Acheter</button></div>`).join('');
 $('#packs').innerHTML=CFG.packs.map(p=>`<div class="c pk ${p.c}"><h3>Pack ${p.k}</h3><div class="pr">${F(p.p)}</div><p>${p.d}</p><ul>${p.a.map(x=>'<li>'+x+'</li>').join('')}</ul><button class="btn p" data-p="${p.k}">Souscrire à ce pack</button></div>`).join('');
-$('#st').innerHTML=CFG.stands.map(s=>`<div class="c pk"><h3>${E(s.k)}</h3><div class="pr">${F(s.p)}</div><p class="empty">${s.m} m²${s.d?' · '+E(s.d):''}</p><button class="btn p" data-s="${E(s.k)}">Réserver ce stand</button></div>`).join('');
+$('#st').innerHTML=CFG.stands.map(s=>`<div class="c pk"><h3>${E(s.k)}</h3><div class="pr">${s.p?F(s.p):'Inclus'}</div><p class="empty">${s.n} stand${s.n>1?'s':''}${s.d?' · '+E(s.d):''}</p>${s.p?`<button class="btn p" data-s="${E(s.k)}">Réserver ce stand</button>`:'<a class="btn" href="#partenaires">Voir les packs</a>'}</div>`).join('');
 $('#ex').innerHTML=CFG.stands.map(s=>{const l=CFG.exposants.filter(x=>x.cat==s.k);return`<div class="c"><h3>${E(s.k)}</h3>${l.length?`<div class="ex">${l.map(x=>'<span>'+E(x.nom)+'</span>').join('')}</div>`:'<p class="empty">Aucun exposant pour l’instant.</p>'}</div>`}).join('');
 $('#lv').innerHTML=CFG.liveUrl?`<iframe src="${E(CFG.liveUrl)}" allowfullscreen loading="lazy" title="Direct"></iframe>`:'<div class="c"><span class="tag">Bientôt</span><p class="empty">Le direct vidéo des matchs sera diffusé ici pendant la compétition.</p></div>';
 function openM(t,lab,opts,sel,pack){$('#mt').textContent=t;$('#ol').textContent=lab;$('select[name=p]').innerHTML=opts.map(o=>`<option>${E(o)}</option>`).join('');$('select[name=p]').value=sel;$('#cw').style.display=pack?'':'none';$('#rf').textContent='';m.dataset.k=lab;m.classList.add('on')}
 document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>openM('Souscrire au pack '+b.dataset.p,'Pack',CFG.packs.map(p=>p.k),b.dataset.p,1));
-document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>openM('Réserver un stand','Stand',CFG.stands.map(p=>p.k),b.dataset.s,0));
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>openM('Réserver un stand','Stand',CFG.stands.filter(p=>p.p).map(p=>p.k),b.dataset.s,0));
 $('#f').onsubmit=e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target)),r='NUG-'+Date.now().toString(36).toUpperCase();
 $('#rf').innerHTML='Référence : <b>'+r+'</b>. Envoyez la demande au comité via WhatsApp. Elle n’est confirmée qu’après validation de l’organisation.';
 window.open(wl(`Demande ${m.dataset.k} ${d.p} (${r})\nNom: ${d.e}\nResponsable: ${d.n} (${d.fn})\nTél: ${d.t}\nEmail: ${d.em}\nVille: ${d.v}\n`+(d.c?'Contribution: '+d.c+'\n':'')+'Message: '+d.msg),'_blank')};
