@@ -3,8 +3,8 @@
 <meta name="description" content="Le Tournoi des Champions : l’élite du Maracana réunie en une seule compétition. Une initiative de Naabi Prod.">
 <meta property="og:title" content="NAAM ULTIMATE GAME – Le Tournoi des Champions"><meta property="og:image" content="photos/hero.jpg">
 <link rel="icon" href="photos/logo.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&text=0123456789&display=swap">
+<link rel="preload" href="photos/fonts/cocogoose-semilight.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="photos/fonts/cocogoose-regular.woff2" as="font" type="font/woff2" crossorigin>
 <script>
 /* ============ À MODIFIER ICI : textes et réglages (tout est en haut du fichier) ============ */
 const TXT={
@@ -15,8 +15,7 @@ date:"Du 21 au 24 janvier 2027 · Ouagadougou",
 lieuTournoi:"Tournoi Maracana : Soccer de Charles Kaboré, samedi 23 et dimanche 24 janvier 2027.",
 lieuFestival:"Festival : terrain côté Nord de la Mairie de l’Arrondissement 5 (ex Bogodogo), non loin du SIAO, du jeudi 21 au dimanche 24 janvier 2027.",
 acces:"Entrée gratuite au festival les jeudi 21 et vendredi 22 janvier. Entrée payante les samedi 23 et dimanche 24 janvier.",
-artistes:"Francky Degam · Campus Ambiance · Mas-B · Élue 111 · Audrey · Reman · Tanya · Faiti baby · Floby · Skanayy",
-artistesNote:"Dix artistes annoncés pour les soirées du festival. Répartition et horaires de passage à venir.",
+artistesNote:"Dix artistes en concert pendant les soirées du festival. Programmation par soirée et horaires de passage à venir.",
 organisateur:"Naabi Prod, initiateur de NAAM ULTIMATE GAME.",
 vision:"Valoriser la jeunesse dans le sport et promouvoir l’excellence dans le Maracana.",
 concept:"Une compétition sélective réservée aux équipes ayant déjà remporté des tournois de Maracana.",
@@ -43,6 +42,17 @@ packs:[{k:"Diamant",c:"d",p:8000000,d:"Partenaire majeur.",a:["Visibilité prior
 // Stands du festival (15 au total). p:0 = inclus dans les packs, non réservable en ligne
 stands:[{k:"Stand grillades",p:50000,n:7},{k:"Stand maquis",p:75000,n:3},{k:"Stand partenaire",p:0,n:5,d:"Inclus dans les packs Diamant et Or"}],
 exposants:[],   // ex: {nom:"Chez Awa",cat:"Grillades"}  (cat = nom exact de la catégorie de stand)
+// Artistes : ordre d’affichage = ordre de la liste. vedette:true = grande carte en tête. photo = chemin du fichier (ex : "photos/artistes/floby.jpg"), vide = case photo en attente
+artistes:[{nom:"Audrey",vedette:false,photo:""},
+{nom:"Campus Ambiance",vedette:false,photo:""},
+{nom:"Élue 111",vedette:false,photo:""},
+{nom:"Faiti baby",vedette:false,photo:""},
+{nom:"Floby",vedette:false,photo:""},
+{nom:"Francky Degam",vedette:false,photo:""},
+{nom:"Mas-B",vedette:false,photo:""},
+{nom:"Reman",vedette:false,photo:""},
+{nom:"Skanayy",vedette:false,photo:""},
+{nom:"Tanya",vedette:false,photo:""}],
 equipes:[],     // ex: {nom:"AS Exemple",ville:"Ouagadougou",palmares:"Vainqueur du tournoi X 2025",logo:"photos/equipe1.jpg"}
 // Programme : [titre, détail]
 steps:[["Jeudi 21 janvier · Festival","Ouverture du village, accueil des exposants, lancement des animations. Entrée gratuite."],
@@ -56,37 +66,49 @@ steps:[["Jeudi 21 janvier · Festival","Ouverture du village, accueil des exposa
 /* ============ FIN DES RÉGLAGES ============ */
 </script>
 <style>
-:root{--bg:#0a0a0a;--card:#141414d9;--tx:#f3f1ec;--mu:#a9a59b;--y:#ffd60a;--o:#ff9f0a;--r:#e10600;--g:#00a650;--ln:#2b2b2b;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@font-face{font-family:Cocogoose;src:url(photos/fonts/cocogoose-light.woff2) format("woff2");font-weight:300;font-display:swap;unicode-range:U+0000-002F,U+003A-10FFFF}
+@font-face{font-family:Cocogoose;src:url(photos/fonts/cocogoose-semilight.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-002F,U+003A-10FFFF}
+@font-face{font-family:Cocogoose;src:url(photos/fonts/cocogoose-regular.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0000-002F,U+003A-10FFFF}
+:root{--bg:#0a0a0a;--card:#111111f2;--tx:#f3f1ec;--mu:#a9a59b;--y:#ffd60a;--o:#ff9f0a;--r:#e10600;--g:#00a650;--ln:#2b2b2b;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-behavior:smooth;scroll-padding-top:70px}*{box-sizing:border-box}
-body{margin:0;color:var(--tx);font:300 17px/1.7 Jost,system-ui,-apple-system,sans-serif;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cg fill='none' stroke='%23ffd60a' stroke-opacity='.075' stroke-width='1.5'%3E%3Cpath d='M0 45L45 0l45 45-45 45z'/%3E%3Cpath d='M22 45l23-23 23 23-23 23z'/%3E%3Cpath d='M0 0l11 11M79 11L90 0M0 90l11-11M79 79l11 11'/%3E%3C/g%3E%3C/svg%3E")}
-h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.03em;text-transform:uppercase;line-height:1.1;margin:0 0 .5em}
-h2{font-size:clamp(32px,6.5vw,52px);color:var(--y)}a{color:inherit}b{font-weight:500}
+body{margin:0;color:var(--tx);font:400 16px/1.75 Cocogoose,Poppins,system-ui,-apple-system,sans-serif;letter-spacing:.01em;background:var(--bg)}
+/* Fond : motif africain sous un voile sombre, pour que le texte reste toujours lisible */
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(#090909d4,#090909e2),url(photos/motif-or.webp) center/cover}
+h1,h2,h3{font-family:Cocogoose,Poppins,system-ui,sans-serif;font-weight:600;letter-spacing:.02em;text-transform:uppercase;line-height:1.1;margin:0 0 .5em}
+h2{font-size:clamp(24px,5.2vw,40px);color:var(--y)}a{color:inherit}b{font-weight:600}
 nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:8px 16px;background:#0a0a0af0;backdrop-filter:blur(8px);border-bottom:1px solid var(--ln)}
 nav img{height:36px;mix-blend-mode:screen}nav div{display:flex;gap:18px;overflow-x:auto;font-size:12px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}nav a{text-decoration:none;color:var(--mu)}nav a:hover{color:var(--y)}
 section{position:relative;overflow:hidden;padding:72px 18px;max-width:1080px;margin:auto}section>*{position:relative}
 .pl{position:absolute!important;right:-24px;top:30px;width:min(300px,52vw);opacity:.1;fill:none;stroke:var(--y);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}.pl.l{right:auto;left:-24px}
 .hero{min-height:86vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;max-width:none;overflow:hidden;background:linear-gradient(#0a0a0a99,#0a0a0aee),var(--hero) center/cover}
-.hero img{width:min(540px,88%);mix-blend-mode:screen}.hero h1{font-size:clamp(38px,8.5vw,78px);color:var(--y);margin-top:10px}
+.hero img{width:min(540px,88%);mix-blend-mode:screen}.hero h1{font-size:clamp(28px,7vw,62px);color:var(--y);margin-top:10px}
 .sl{color:var(--mu);font-style:italic;max-width:560px}.hero p{max-width:600px}
-.btn{display:inline-block;padding:12px 24px;border-radius:999px;border:1px solid var(--y);font:500 12px Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:none;color:var(--tx);margin:5px;transition:.5s}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;border:1px solid var(--y);font:500 12px Cocogoose,Poppins,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:none;color:var(--tx);margin:5px;transition:.5s}
 .btn:hover{background:#ffd60a22}.btn.p{background:linear-gradient(90deg,var(--y),var(--o));color:#111;border-color:transparent}
-.cd{display:flex;gap:10px;justify-content:center;margin:18px 0}.cd b{background:#000a;border:1px solid var(--ln);border-radius:10px;padding:6px 12px;font:600 30px 'Cormorant Garamond',serif}.cd small{display:block;font:300 11px Jost;color:var(--mu)}
+.cd{display:flex;gap:10px;justify-content:center;margin:18px 0}.cd b{background:#000a;border:1px solid var(--ln);border-radius:10px;padding:6px 12px;font:600 30px Cocogoose,Poppins,sans-serif}.cd small{display:block;font:300 11px Cocogoose,Poppins,sans-serif;color:var(--mu)}
 .stripe{height:4px;background:linear-gradient(90deg,var(--r) 33%,var(--y) 33% 66%,var(--g) 66%)}
 .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:14px 0}
-.c{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:20px;backdrop-filter:blur(3px)}.c h3{color:var(--y);font-size:22px}
-.tag{display:inline-block;font:500 11px Jost;letter-spacing:.1em;background:#ff9f0a1f;color:var(--o);border:1px solid var(--o);border-radius:6px;padding:1px 8px;text-transform:uppercase}
-.pr{font:600 28px 'Cormorant Garamond',serif;color:var(--y);margin:4px 0}.empty{color:var(--mu);font-size:14px}
+.c{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:20px;backdrop-filter:blur(3px)}.c h3{color:var(--y);font-size:17px;letter-spacing:.04em}
+.tag{display:inline-block;font:500 11px Cocogoose,Poppins,sans-serif;letter-spacing:.1em;background:#ff9f0a1f;color:var(--o);border:1px solid var(--o);border-radius:6px;padding:1px 8px;text-transform:uppercase}
+.pr{font:600 28px Cocogoose,Poppins,sans-serif;color:var(--y);margin:4px 0}.empty{color:var(--mu);font-size:14px}
 ol.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--y)}ol.tl li{padding:8px 0 8px 14px;cursor:pointer;position:relative}ol.tl li:before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--y)}ol.tl li span{display:none;color:var(--mu);font-size:14px}ol.tl li.on span{display:block}
 .pk{text-align:center}.pk.d{border-color:#7fd8ff}.pk.o{border-color:var(--y)}.pk.a{border-color:#bbb}.pk ul{text-align:left;font-size:15px;color:var(--mu);padding-left:18px}
 .tm{width:100%;border-radius:14px;margin-top:14px}iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px}
 .ex{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.ex span{border:1px solid var(--ln);border-radius:20px;padding:1px 10px;font-size:13px}
+.ar{display:grid;gap:14px;grid-template-columns:repeat(2,1fr);margin-top:18px}@media(min-width:700px){.ar{grid-template-columns:repeat(4,1fr)}}
+.ar figure{margin:0;background:var(--card);border:1px solid var(--ln);border-radius:16px;overflow:hidden;transition:transform .6s,border-color .6s}.ar figure:hover{transform:translateY(-3px);border-color:var(--y)}
+.ar .ph{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;background:linear-gradient(#0b0b0bd0,#0b0b0bf0),url(photos/motif-orange.webp) center/cover;color:var(--mu);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.ar .ph b{font-size:44px;color:var(--o);letter-spacing:0}
+.ar img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.ar figcaption{padding:12px 14px;font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--tx)}.ar figcaption small{display:block;font-weight:400;font-size:11px;color:var(--o);letter-spacing:.14em}
+.ar .v{grid-column:span 2}.ar .v .ph,.ar .v img{aspect-ratio:4/3}.ar .v figcaption{font-size:20px;color:var(--y)}
+#artistes{background:linear-gradient(#0a0a0ae6,#0a0a0ae6),url(photos/motif-orange.webp) center/420px;border-radius:0;max-width:none}#artistes>*{max-width:1080px;margin-left:auto;margin-right:auto}
 .team img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;margin-bottom:8px}
 .ov{position:fixed;inset:0;background:#000d;display:none;align-items:flex-start;justify-content:center;z-index:50;padding:14px;overflow:auto}.ov.on{display:flex}
 .ov form,.ov .box{background:#141414;border:1px solid var(--y);border-radius:16px;padding:20px;width:min(520px,100%);margin:auto}
 input,select,textarea{width:100%;padding:10px;margin:4px 0 10px;border-radius:8px;border:1px solid var(--ln);background:#0a0a0a;color:var(--tx);font:inherit;font-size:16px}label{font-size:12px;color:var(--mu)}
 .wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-weight:600;color:#fff;text-decoration:none;z-index:30;box-shadow:0 4px 14px #0008}
 footer{border-top:1px solid var(--ln);padding:28px 18px;text-align:center;color:var(--mu);font-size:14px;background:#0a0a0a}
-.tk{background:#fff;color:#000;border:2px dashed #000;border-radius:12px;padding:16px;margin:12px 0;text-align:center;position:relative;font-family:Jost,sans-serif}.tk img{height:50px;filter:none;background:#000;border-radius:6px;padding:2px}.tk h3{color:#000;margin:6px 0}.tk .q{display:flex;justify-content:center;margin:8px 0}.tk .wm{color:#c00;font-weight:500;font-size:13px}
+.tk{background:#fff;color:#000;border:2px dashed #000;border-radius:12px;padding:16px;margin:12px 0;text-align:center;position:relative;font-family:Cocogoose,Poppins,sans-serif}.tk img{height:50px;filter:none;background:#000;border-radius:6px;padding:2px}.tk h3{color:#000;margin:6px 0}.tk .q{display:flex;justify-content:center;margin:8px 0}.tk .wm{color:#c00;font-weight:500;font-size:13px}
 .rv{opacity:0;transform:translateY(22px);transition:opacity 1.3s ease,transform 1.3s ease}.rv.in{opacity:1;transform:none}
 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}.w i{display:inline-block;font-style:normal;transform:translateY(108%);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.in .w i{transform:none}
 .pk:hover{transform:translateY(-3px)}
@@ -98,7 +120,7 @@ footer{border-top:1px solid var(--ln);padding:28px 18px;text-align:center;color:
 <symbol id="p2" viewBox="0 0 100 100"><circle cx="60" cy="14" r="8"/><path d="M56 26l-10 28M54 32l-22 6m22-6l18 14M46 54L28 72 14 92M46 54l24 12 4 28"/><circle cx="86" cy="92" r="6"/></symbol>
 <symbol id="p3" viewBox="0 0 100 100"><circle cx="50" cy="16" r="8"/><path d="M50 26v32M50 32L28 10m22 22l22-22M50 58L36 94m14-36l14 36"/></symbol>
 <symbol id="p4" viewBox="0 0 100 100"><circle cx="28" cy="34" r="8"/><path d="M36 38l34 14M40 40L14 20m26 20l-4-26M70 52l24 14M70 52l22 2"/><circle cx="8" cy="10" r="6"/></symbol></defs></svg>
-<nav><img src="photos/logo.jpg" alt="Ultimate Game"><div><a href="#concept">Concept</a><a href="#format">Programme</a><a href="#equipes">Équipes</a><a href="#prix">Récompenses</a><a href="#billetterie">Billetterie</a><a href="#partenaires">Partenaires</a><a href="#live">Live</a><a href="#village">Village</a></div></nav>
+<nav><img src="photos/logo.jpg" alt="Ultimate Game"><div><a href="#concept">Concept</a><a href="#format">Programme</a><a href="#artistes">Artistes</a><a href="#equipes">Équipes</a><a href="#prix">Récompenses</a><a href="#billetterie">Billetterie</a><a href="#partenaires">Partenaires</a><a href="#live">Live</a><a href="#village">Village</a></div></nav>
 <header class="hero in" style="--hero:url(photos/hero.jpg)"><img src="photos/logo.jpg" alt="NAAM Ultimate Game">
 <h1 data-t="titre"></h1><p class="sl" data-t="slogan"></p><p data-t="intro"></p><p><b data-t="date"></b></p><div class="cd" id="cd"></div>
 <div><a class="btn p" href="#billetterie">Réserver mon billet</a><a class="btn" href="#concept">Découvrir la compétition</a><a class="btn" href="#partenaires">Devenir partenaire</a><a class="btn" href="#live">Voir les résultats</a></div></header><div class="stripe"></div>
@@ -110,8 +132,9 @@ footer{border-top:1px solid var(--ln);padding:28px 18px;text-align:center;color:
 
 <section id="format" class="rv"><svg class="pl l"><use href="#p2"/></svg><h2>Deux sites, un événement</h2>
 <div class="grid"><div class="c"><h3>Le Maracana</h3><span data-t="lieuTournoi"></span><p class="empty" data-t="format"></p></div><div class="c"><h3>Le Festival</h3><span data-t="lieuFestival"></span><p class="empty" data-t="acces"></p></div></div>
-<h3 style="margin-top:28px">Programme</h3><ol class="tl" id="tl"></ol><p class="empty">Ordre des matchs et tableau officiel fixés par le comité sportif. Touchez une ligne pour voir le détail.</p>
-<div class="c" style="margin-top:20px"><h3>Artistes du festival</h3><span data-t="artistes"></span><p class="empty" data-t="artistesNote"></p></div></section>
+<h3 style="margin-top:28px">Programme</h3><ol class="tl" id="tl"></ol><p class="empty">Ordre des matchs et tableau officiel fixés par le comité sportif. Touchez une ligne pour voir le détail.</p></section>
+
+<section id="artistes" class="rv"><h2>Les artistes du festival</h2><p data-t="artistesNote"></p><div class="ar" id="ar"></div></section>
 
 <section id="equipes" class="rv"><svg class="pl"><use href="#p4"/></svg><h2>Équipes sélectionnées</h2><div class="grid" id="eq"></div></section>
 
@@ -157,6 +180,7 @@ const $=s=>document.querySelector(s),m=$('#m'),tm=$('#tm'),tkp=$('#tkp'),F=n=>n.
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=TXT[e.dataset.t]);
 const wl=t=>'https://wa.me/'+CFG.whatsapp+'?text='+encodeURIComponent(t);$('#wa').href=wl('Bonjour, je souhaite contacter le comité NAAM Ultimate Game.');
 const E=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+$('#ar').innerHTML=CFG.artistes.map(a=>{const ini=a.nom.replace(/[^A-Za-zÀ-ÿ0-9 ]/g,'').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();return`<figure class="${a.vedette?'v':''}">${a.photo?`<img src="${E(a.photo)}" alt="${E(a.nom)}" loading="lazy">`:`<div class="ph"><b>${E(ini)}</b>Photo à venir</div>`}<figcaption>${a.vedette?'<small>Tête d’affiche</small>':''}${E(a.nom)}</figcaption></figure>`}).join('');
 $('#eq').innerHTML=CFG.equipes.length?CFG.equipes.map(t=>`<div class="c team">${t.logo?`<img src="${E(t.logo)}" alt="${E(t.nom)}" loading="lazy">`:''}<h3>${E(t.nom)}</h3>${E(t.ville||'')}<p class="empty">${E(t.palmares||'')}</p></div>`).join(''):'<div class="c"><span class="tag">À annoncer</span><p class="empty">La liste officielle des équipes invitées sera publiée ici dès validation.</p></div>';
 $('#bil').innerHTML=CFG.tickets.map((t,i)=>`<div class="c pk"><h3>${E(t.k)}</h3><div class="pr">${F(t.p)}</div><p class="empty">${E(t.d)}</p><button class="btn p" data-t="${i}">Acheter</button></div>`).join('');
 $('#packs').innerHTML=CFG.packs.map(p=>`<div class="c pk ${p.c}"><h3>Pack ${p.k}</h3><div class="pr">${F(p.p)}</div><p>${p.d}</p><ul>${p.a.map(x=>'<li>'+x+'</li>').join('')}</ul><button class="btn p" data-p="${p.k}">Souscrire à ce pack</button></div>`).join('');
